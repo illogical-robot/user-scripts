@@ -1,15 +1,18 @@
 // ==UserScript==
-// @name Basecamp 3: Subscribe everyone button (Chrome)
+// @name Basecamp 3: Subscribe Everyone button
 // @author Corbin Davenport
+// @homepage https://github.com/android-police/basecamp-scripts
+// @updateURL https://raw.githubusercontent.com/android-police/basecamp-scripts/master/bc3-subscribe-everyone.js
+// @downloadURL https://raw.githubusercontent.com/android-police/basecamp-scripts/master/bc3-subscribe-everyone.js
 // @include https://3.basecamp.com/*
-// @version 1.0
+// @version 2.0
 // @grant none
 // ==/UserScript==
 
 function subscribeEveryone() {
 	// Check all people who aren't already subscribed
 	$("div[data-controller='checkbox-group'").find("input[id='subscriptions_']").prop("checked", true)
-	// Select 'Send new peopel the to-do right now' radio button
+	// Select 'Send new people the to-do right now' radio button
 	$("#notify_true").prop("checked", true)
 	// Click 'Save changes' button
 	$("input[type='submit']").trigger("click")
@@ -20,8 +23,15 @@ function injectSubscribeButton() {
 		// The button already exists, so don't do anything
 	} else {
 		var subscribeLink = $(".thread__subscribers a").attr("href") + "#addeveryone"
-		var button = '<a class="btn btn--small" id="add-everyone-button" href="' + subscribeLink + '">Add everyone</a>'
-		$(".perma-toolbar span:first").prepend(button)
+        var button = document.createElement('a')
+        button.classList.add('btn', 'btn--small')
+        button.id = 'add-everyone-button'
+        button.innerText = 'Add everyone'
+        button.addEventListener('click', function() {
+            // Use location.replace to avoid having to click back twice after returning to BC item
+            window.location.replace(subscribeLink)
+        })
+		$(".perma-toolbar span:first")[0].prepend(button)
 	}
 }
 
