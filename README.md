@@ -2,4 +2,4 @@ This is a collection of userscripts to improve [Basecamp 3](https://basecamp.com
 
 **Click the below links to install the scripts:**
 
-* [Add Everyone button](https://android-police.github.io/basecamp-scripts/)
+* [Add Everyone button](https://android-police.github.io/user-scripts/bc3-subscribe-everyone-btn.user.js)
