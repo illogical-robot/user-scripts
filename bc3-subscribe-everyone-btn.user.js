@@ -2,8 +2,8 @@
 // @name Basecamp 3: Subscribe Everyone button
 // @author Corbin Davenport
 // @homepage https://github.com/android-police/basecamp-scripts
-// @updateURL http://cdn.jsdelivr.net/gh/android-police/basecamp-scripts@latest/bc3-subscribe-everyone.user.js
-// @downloadURL http://cdn.jsdelivr.net/gh/android-police/basecamp-scripts@latest/bc3-subscribe-everyone.user.js
+// @updateURL http://cdn.jsdelivr.net/gh/android-police/basecamp-scripts@latest/bc3-subscribe-everyone-btn.user.js
+// @downloadURL http://cdn.jsdelivr.net/gh/android-police/basecamp-scripts@latest/bc3-subscribe-everyone-btn.user.js
 // @include https://3.basecamp.com/*
 // @version 2.0
 // @grant none
